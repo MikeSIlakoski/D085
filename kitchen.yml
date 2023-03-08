@@ -13,7 +13,7 @@ verifier: # verifier specifies which application to use when running automated t
   name: inspec
 # platforms is used to specify the target operating systems. We are utilzing: CentOS 7.
 platforms:
-  - name: centos-7
+  - name: unbuntu
 suites:
   - name: SAd-INC1
     driver:
