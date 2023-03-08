@@ -14,6 +14,11 @@ verifier: # verifier specifies which application to use when running automated t
 # platforms is used to specify the target operating systems. We are utilzing: CentOS 7.
 platforms:
   - name: ubuntu-20.04
+  provisioner:
+    attributes:
+      users:
+        admin:
+          password: "password"
 suites:
   - name: SAd-INC1
     driver:
