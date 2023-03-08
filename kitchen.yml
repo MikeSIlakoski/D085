@@ -1,29 +1,29 @@
 driver:
   name: vagrant
   network:
-    - ["public_network"]  # creates second interface to allow VMs to reach each other
+    - ["public_network"]  # creates an additional interface allow allowing each VMs to interconnect.
   customize:
-    memory:  512  # sets the amount of memory for each VM to 512 MB
+    memory:  1024  # Provisions 1024 MB of memory for each VM.
 provisioner:
   name: chef_zero
   product_name: chef
   product_version: 14.12.9
-# verifier specifies which application to use when running automated tests.
-verifier:
+
+verifier: # verifier specifies which application to use when running automated tests.
   name: inspec
-# platforms specifies the target operating systems. We're targeting just one   CentOS 7.
+# platforms is used to specify the target operating systems. We are utilzing: CentOS 7.
 platforms:
   - name: centos-7
 suites:
-  - name: test1
+  - name: SAd_INC1
     driver:
-      vm_hostname: test1.SparkIT-Games.com
+      vm_hostname: VM1.SAd_INC.com
     run_list:
       - recipe[learn_chef_httpd::default]
     attributes:
-  - name: test2
+  - name: SAd_INC2
     driver:
-      vm_hostname: test2.SparkIT-Games.com
+      vm_hostname: VM2.SAd_INC.com
     run_list:
       - recipe[learn_chef_httpd::default]
     attributes:
