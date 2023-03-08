@@ -19,21 +19,24 @@ suites:
     driver:
       vm_hostname: SAT.SAd-INC.com
     run_list:
-      - recipe[D085::satellite]
+      - recipe[D085::SAT]
     attributes:
+
   - name: Web_Server
     driver:
       vm_hostname: WEB.SAd-INC.com
     run_list:
       - recipe[D085::WEB]
     attributes:
-   - name: Time_Server
+
+  - name: Time_Server
     driver:
       vm_hostname: TIME.SAd-INC.com
     run_list:
       - recipe[D085::TIME]
     attributes:
-   - name: Database_Server
+
+  - name: Database_Server
     driver:
       vm_hostname: DB.SAd-INC.com
     run_list:
