@@ -17,7 +17,7 @@ platforms:
   provisioner:
     attributes:
       users:
-        admin:
+        myuser:
           password: "password"
 suites:
   - name: SAd-INC1
