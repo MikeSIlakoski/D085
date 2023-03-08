@@ -6,10 +6,10 @@
 
 require 'spec_helper'
 
-describe 'learn_chef_httpd::default' do
+describe 'D085::default' do
   context 'When all attributes are default, on an unspecified platform' do
     let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new(platform: 'centos', version: '7.2.1511')
+      runner = ChefSpec::ServerRunner.new(platform: 'ubuntu', version: '20.04')
       runner.converge(described_recipe)
     end
 
