@@ -1,47 +1,46 @@
+# Works to make 4 VMs
 
 driver:
   name: vagrant
   network:
-    - ["public_network"]
+    - ["public_network"]  # creates an additional interface allow allowing each VMs to interconnect.
   customize:
-    memory:  1024
+    memory:  1024  # Provisions 1024 MB of memory for each VM.
 provisioner:
   name: chef_zero
   product_name: chef
   product_version: 14.12.9
 
-verifier:
+verifier: # verifier specifies which application to use when running automated tests.
   name: inspec
-
-  platforms:
-  <% (1..4).each do |i| %>
+# platforms is used to specify the target operating systems. We are utilzing: CentOS 7.
+platforms:
   - name: centos-7
-    suites:
-      - name: Satellite_Teminal_Server<%= i %>
-        driver:
-          vm_hostname: SAT.SAd-INC-<%= i %>.com
-        run_list:
-          - recipe[D085::SAT]
-        attributes:
+suites:
+  - name: Satellite_Teminal_Server
+    driver:
+      vm_hostname: SAT.SAd-INC.com
+    run_list:
+      - recipe[D085::SAT]
+    attributes:
 
-      - name: Web_Server<%= i %>
-        driver:
-          vm_hostname: WEB.SAd-INC-<%= i %>.com
-        run_list:
-          - recipe[D085::WEB]
-        attributes:
+  - name: Web_Server
+    driver:
+      vm_hostname: WEB.SAd-INC.com
+    run_list:
+      - recipe[D085::WEB]
+    attributes:
 
-      - name: Time_Server<%= i %>
-        driver:
-          vm_hostname: TIME.SAd-INC-<%= i %>.com
-        run_list:
-          - recipe[D085::TIME]
-        attributes:
+  - name: Time_Server
+    driver:
+      vm_hostname: TIME.SAd-INC.com
+    run_list:
+      - recipe[D085::TIME]
+    attributes:
 
-      - name: Database_Server<%= i %>
-        driver:
-          vm_hostname: DB.SAd-INC-<%= i %>.com
-        run_list:
-          - recipe[D085::DB]
-        attributes:
-  <% end %>
+  - name: Database_Server
+    driver:
+      vm_hostname: DB.SAd-INC.com
+    run_list:
+      - recipe[D085::DB]
+    attributes:
