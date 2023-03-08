@@ -19,11 +19,11 @@ suites:
     driver:
       vm_hostname: VM1.SAd_INC.com
     run_list:
-      - recipe[learn_chef_httpd::default]
+      - recipe[D085::default]
     attributes:
   - name: SAd_INC2
     driver:
       vm_hostname: VM2.SAd_INC.com
     run_list:
-      - recipe[learn_chef_httpd::default]
+      - recipe[D085::default]
     attributes:
