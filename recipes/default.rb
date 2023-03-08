@@ -3,9 +3,9 @@
 # Recipe:: default
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
-package 'D085'
+package 'httpd'
 
-service 'D085' do
+service 'httpd' do
   action [:enable, :start]
 end
 
