@@ -21,28 +21,28 @@ platforms:
 suites:
   - name: Satellite_Teminal_Server
     driver:
-      vm_hostname: SAT(i).SAd-INC.com
+      vm_hostname: SAT'(i)'.SAd-INC.com
     run_list:
       - recipe[D085::SAT]
     attributes:
 
   - name: Web_Server
     driver:
-      vm_hostname: WEB(i).SAd-INC.com
+      vm_hostname: WEB'(i)'.SAd-INC.com
     run_list:
       - recipe[D085::WEB]
     attributes:
 
   - name: Time_Server
     driver:
-      vm_hostname: TIME(i).SAd-INC.com
+      vm_hostname: TIME'(i)'.SAd-INC.com
     run_list:
       - recipe[D085::TIME]
     attributes:
 
   - name: Database_Server
     driver:
-      vm_hostname: DB(i).SAd-INC.com
+      vm_hostname: DB'(i)'.SAd-INC.com
     run_list:
       - recipe[D085::DB]
     attributes:
