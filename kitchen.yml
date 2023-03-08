@@ -15,13 +15,13 @@ verifier: # verifier specifies which application to use when running automated t
 platforms:
   - name: centos-7
 suites:
-  - name: SAd_INC1
+  - name: SAd-INC1
     driver:
       vm_hostname: VM1.SAd-INC.com
     run_list:
       - recipe[D085::default]
     attributes:
-  - name: SAd_INC2
+  - name: SAd-INC2
     driver:
       vm_hostname: VM2.SAd-INC.com
     run_list:
