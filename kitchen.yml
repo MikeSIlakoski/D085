@@ -17,7 +17,7 @@ platforms:
 suites:
   - name: SAd-INC1
     driver:
-      vm_hostname: VM1.SAd.com
+      vm_hostname: VM1.SAd-INC.com
     run_list:
       - recipe[D085::default]
     attributes:
