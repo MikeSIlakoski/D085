@@ -1,9 +1,9 @@
-name 'learn_chef_httpd'
+name 'D085'
 maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer_email 'themrmikeski@gmail.com'
 license 'all_rights'
-description 'Installs/Configures learn_chef_httpd'
-long_description 'Installs/Configures learn_chef_httpd'
+description 'Installs/Configures D085'
+long_description 'Installs/Configures D085'
 version '0.1.0'
-issues_url 'https://github.com/learn-chef/learn_chef_httpd/issues' if respond_to?(:issues_url)
-source_url 'https://github.com/learn-chef/learn_chef_httpd' if respond_to?(:source_url)
+issues_url 'https://github.com/MikeSIlakoski/D085/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/MikeSIlakoski/D085' if respond_to?(:source_url)
