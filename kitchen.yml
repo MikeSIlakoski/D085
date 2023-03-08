@@ -46,4 +46,3 @@ suites:
     run_list:
       - recipe[D085::DB]
     attributes:
-puts i
