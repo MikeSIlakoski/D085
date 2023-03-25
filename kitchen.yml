@@ -21,15 +21,16 @@ platforms:
   - name: centos-7
 
 suites:
+   # Below gets the current month as 1-12 then associates the projected amount of clusters required
   <% 
   
   current_month = Time.now.month 
   
   case current_month
   when 1
-    month_value = 1
+    month_value = 30
   when 2
-    month_value = 1
+    month_value = 42
   when 3
     month_value = 1
   when 4
