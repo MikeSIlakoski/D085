@@ -24,7 +24,7 @@ suites:
    # Below gets the current month as 1-12 then associates the projected amount of clusters required
   <% 
   
-  current_month = 5 
+  current_month = Time.now.month
   
   case current_month
   when 1
