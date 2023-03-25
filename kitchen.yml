@@ -18,35 +18,35 @@ verifier: # verifier specifies which application to use when running automated t
   name: inspec
 # platforms is used to specify the target operating systems. We are utilzing: CentOS 7.
 platforms:
-    #month_number = Time.now.month
+    month_number = <%= Time.now.month %>
     #i = 5.to_s #( number of running VMs divided by 4) + 1 = iteration number (i)
 
   - name: centos-7
 suites:
-  - name: Satellite_Teminal_Server<%= Time.now.month %>
+  - name: Satellite_Teminal_Server<%= month_number %>
     driver:
-      vm_hostname: SATmonth-number.SAd-INC.com
+      vm_hostname: SAT.SAd-INC.com
     run_list:
       - recipe[D085::SAT]
     attributes:
 
-  - name: Web_Server
+  - name: Web_Server<%= month_number %>
     driver:
-      vm_hostname: WEBmonth-number.SAd-INC.com
+      vm_hostname: WEB.SAd-INC.com
     run_list:
       - recipe[D085::WEB]
     attributes:
 
-  - name: Time_Server
+  - name: Time_Server<%= month_number %>
     driver:
-      vm_hostname: TIMEmonth-number.SAd-INC.com
+      vm_hostname: TIME.SAd-INC.com
     run_list:
       - recipe[D085::TIME]
     attributes:
 
-  - name: Database_Server
+  - name: Database_Server<%= month_number %>
     driver:
-      vm_hostname: DBmonth-number.SAd-INC.com
+      vm_hostname: DB.SAd-INC.com
     run_list:
       - recipe[D085::DB]
     attributes:
