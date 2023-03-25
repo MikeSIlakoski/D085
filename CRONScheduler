@@ -1,6 +1,0 @@
-cron 'monthly_kitchen_run' do
-  minute '40'
-  hour '16'
-  day '25'
-  command 'kitchen create'
-end
