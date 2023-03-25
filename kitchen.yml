@@ -53,6 +53,8 @@ suites:
     
    %>
    
+   <% end %>
+   
   <% (1..month_value).each do |i| %> # Creates VMs with unique names starting with the initial iteration number and counting to the current month.
   
   - name: Satellite_Teminal_Server_<%= i %> # Creates Sat Term Servers with unique names for 1-Current Month
