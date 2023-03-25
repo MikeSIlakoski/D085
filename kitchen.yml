@@ -18,7 +18,7 @@ verifier: # verifier specifies which application to use when running automated t
   name: inspec
 # platforms is used to specify the target operating systems. We are utilzing: CentOS 7.
 platforms:
-    month_number = <%= Time.now.month %>
+    <%= month_number = Time.now.month %>
     #i = 5.to_s #( number of running VMs divided by 4) + 1 = iteration number (i)
 
   - name: centos-7
