@@ -23,7 +23,7 @@ platforms:
 
   - name: centos-7
 suites:
-  - name: 'Satellite_Teminal_Server' + Time.now.month
+  - name: Satellite_Teminal_Server<%= Time.now.month %>
     driver:
       vm_hostname: SATmonth-number.SAd-INC.com
     run_list:
