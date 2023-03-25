@@ -14,7 +14,7 @@ month_hash = {
 }
 
 puts "Enter a month (e.g. Jan):"
-month = gets.chomp
+month = gets
 
 month_num = month_hash[month]
 
