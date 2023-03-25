@@ -1,6 +1,6 @@
 # Works to make 4 VMs
 
-month_number = Time.now.month # Assigns a Variable for the current month to complete task based off projections
+#month_number = Time.now.month # Assigns a Variable for the current month to complete task based off projections
 
 
 driver:
