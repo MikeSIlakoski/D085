@@ -1,7 +1,6 @@
 # Works to make 4 VMs
 
-#month_number = Time.now.month # Assigns a Variable for the current month to complete task based off projections
-
+i: 1
 
 driver:
   name: vagrant
@@ -17,36 +16,39 @@ provisioner:
 verifier: # verifier specifies which application to use when running automated tests.
   name: inspec
 # platforms is used to specify the target operating systems. We are utilzing: CentOS 7.
-platforms:
-    #month_number = <%= Time.now.month %>
-    #i = 5.to_s #( number of running VMs divided by 4) + 1 = iteration number (i)
 
-  - name: centos-7
-suites:
-  - name: Satellite_Teminal_Server<%= Time.now.month %>
-    driver:
-      vm_hostname: SAT.SAd-INC.com
-    run_list:
-      - recipe[D085::SAT]
-    attributes:
+while i <= <%= Time.now.month %> do
 
-  - name: Web_Server<%= Time.now.month %>
-    driver:
-      vm_hostname: WEB.SAd-INC.com
-    run_list:
-      - recipe[D085::WEB]
-    attributes:
+  platforms:
+      
+      #i = 5.to_s #( number of running VMs divided by 4) + 1 = iteration number (i)
 
-  - name: Time_Server<%= Time.now.month %>
-    driver:
-      vm_hostname: TIME.SAd-INC.com
-    run_list:
-      - recipe[D085::TIME]
-    attributes:
+    - name: centos-7
+  suites:
+    - name: Satellite_Teminal_Server#{i}
+     driver:
+        vm_hostname: SAT.SAd-INC.com
+     run_list:
+       - recipe[D085::SAT]
+     attributes:
 
-  - name: Database_Server<%= Time.now.month %>
-    driver:
-      vm_hostname: DB.SAd-INC.com
-    run_list:
-      - recipe[D085::DB]
-    attributes:
+    - name: Web_Server#{i}
+     driver:
+        vm_hostname: WEB.SAd-INC.com
+      run_list:
+        - recipe[D085::WEB]
+      attributes:
+  
+   - name: Time_Server<#{i}
+      driver:
+        vm_hostname: TIME.SAd-INC.com
+      run_list:
+        - recipe[D085::TIME]
+      attributes:
+
+    - name: Database_Server#{i}
+      driver:
+        vm_hostname: DB.SAd-INC.com
+      run_list:
+        - recipe[D085::DB]
+      attributes:
