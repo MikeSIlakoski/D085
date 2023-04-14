@@ -2,12 +2,12 @@
 
 # Below Script creates 4 Baseline VMs and 4 Scaled VMs per cluster potential within the Background, Data and Business requirment document based off the current month.
 
-i: 1 # Assigns i as the inital iteration number.
+i: 1 # Assigns i as the initial iteration number.
 
 driver:
   name: vagrant
   network:
-    - ["public_network"] # Creates an additional interface alloinging each VM to interconnect.
+    - ["public_network"] # Creates an additional interface allowing each VM to interconnect.
   customize:
     memory: 1024 # assigns 1024 MB of Memory for each VM.
 
