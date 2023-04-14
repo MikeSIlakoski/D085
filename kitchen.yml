@@ -74,9 +74,9 @@ suites:
       - recipe[D085::WEB]
     attributes:
 
-  - name: Time_Server # Creates Master Time Server
+  - name: Master_Time_Server # Creates Master Time Server
     driver:
-      vm_hostname: "TIME.SAd-INC.com"
+      vm_hostname: "MASTER_TIME.SAd-INC.com"
     run_list:
       - recipe[D085::TIME]
     attributes:
