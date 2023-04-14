@@ -56,30 +56,58 @@ suites:
    
    <% end %>
    
-  <% (1..month_value).each do |i| %> # Creates VMs with unique names starting with the initial iteration number and counting to the current month.
+  <% (1..month_value).each do |i| %> # Creates Scaled VMs with unique names starting with the initial iteration number and counting to the current month.
   
-  - name: Satellite_Teminal_Server_<%= i %> # Creates Sat Term Servers with unique names for 1-month_value
+  - name: Satellite_Terminal_Server # Creates Sat Term Server
+    driver:
+      vm_hostname: "SAT.SAd-INC.com"
+    run_list:
+      - recipe[D085::SAT]
+    attributes:
+
+  - name: Web_Server # Creates Web Server
+    driver:
+      vm_hostname: "WEB.SAd-INC.com"
+    run_list:
+      - recipe[D085::WEB]
+    attributes:
+
+  - name: Time_Server # Creates Master Time Server
+    driver:
+      vm_hostname: "TIME.SAd-INC.com"
+    run_list:
+      - recipe[D085::TIME]
+    attributes:
+
+  - name: Database_Server # Creates Database Server
+    driver:
+      vm_hostname: "DB.SAd-INC.com"
+    run_list:
+      - recipe[D085::DB]
+    attributes:
+      
+  - name: Scaled_Satellite_Terminal_Server_<%= i %> # Creates Scaled Sat Term Servers with unique names for 1-month_value
     driver:
       vm_hostname: "SAT.<%= i %>.SAd-INC.com"
     run_list:
       - recipe[D085::SAT]
     attributes:
 
-  - name: Web_Server_<%= i %> # Creates Web Servers with unique names for 1-month_value
+  - name: Scaled_Web_Server_<%= i %> # Creates Scaled Web Servers with unique names for 1-month_value
     driver:
       vm_hostname: "WEB.<%= i %>.SAd-INC.com"
     run_list:
       - recipe[D085::WEB]
     attributes:
 
-  - name: Time_Server_<%= i %> # Creates Time Servers with unique names for 1-month_value
+  - name: Scaled_Time_Server_<%= i %> # Creates Scaled Time Servers with unique names for 1-month_value
     driver:
       vm_hostname: "TIME.<%= i %>.SAd-INC.com"
     run_list:
       - recipe[D085::TIME]
     attributes:
 
-  - name: Database_Server_<%= i %> # Creates Database Servers with unique names for 1-month_value
+  - name: Scaled_Database_Server_<%= i %> # Creates Scaled Database Servers with unique names for 1-month_value
     driver:
       vm_hostname: "DB.<%= i %>.SAd-INC.com"
     run_list:
