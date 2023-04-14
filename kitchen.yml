@@ -1,4 +1,6 @@
-# Below Script creates 4 VMs per cluster potential within the Background, Data and Business requirment document based off the current month.
+# Michael Silakoski 008085875
+
+# Below Script creates 4 Baseline VMs and 4 Scaled VMs per cluster potential within the Background, Data and Business requirment document based off the current month.
 
 i: 1 # Assigns i as the inital iteration number.
 
